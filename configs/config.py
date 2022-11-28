@@ -6,18 +6,18 @@ import os
 class bot(object):
     
     # get API_ID, API_HASH values from my.telegram.org (Mandatory)
-    API_ID = os.environ.get("API_ID")
-    API_HASH = os.environ.get("API_HASH")
+    API_ID = os.environ.get("API_ID", "19491592")
+    API_HASH = os.environ.get("API_HASH", "01a4118f7aec3b2caece77a057fdd197")
     
     # add API_TOKEN from @botfather (Mandatory)
-    API_TOKEN = os.environ.get("API_TOKEN")
+    API_TOKEN = os.environ.get("API_TOKEN", "5667534661:AAEiRSAoA-YVDi8-6SNYqgku9lgEjouThw0")
 
 
 class dm(object):
     
     # add admins Id list by space seperated (Optional)
     ADMINS = list(set(int(x) for x in os.environ.get("ADMINS", "").split()))
-    ADMINS.append(531733867)
+    ADMINS.append(5175000602)
     
     ADMIN_ONLY = os.environ.get("ADMIN_ONLY", False)
     
