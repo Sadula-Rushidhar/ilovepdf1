@@ -87,5 +87,7 @@ class settings(object):
     OWNER_ID, OWNER_USERNAME = 531733867, "nabilanavab"
     
     OWNED_CHANNEL = "https://telegram.dog/iLovePDF_bot"
+
+    PORT = os.environ.get("PORT", "8080")
     
 # ===================================================================================================================================[NABIL A NAVAB -> TG: nabilanavab]
