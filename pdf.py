@@ -57,7 +57,7 @@ class Bot(ILovePDF):
         app = web.AppRunner(await web_server())
         await app.setup()
         bind_address = "0.0.0.0"
-        await web.TCPSite(app, bind_address, PORT).start()
+        await web.TCPSite(app, bind_address, settings.PORT).start()
 
         if dataBASE.MONGODB_URI:
             # ------------------------------------------------------------------------------------------------------- Loads Banned UsersId to List --------------------
