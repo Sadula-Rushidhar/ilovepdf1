@@ -18,6 +18,8 @@ iLovePDF = '''
 import asyncio
 from configs.db import *
 from logger import logger
+from aiohttp import web
+from plugins import web_server
 from lang import __users__
 from pyromod import listen
 from configs.log import log
@@ -51,6 +53,12 @@ class Bot(ILovePDF):
         )
     
     async def start(self):
+        #web-response
+        app = web.AppRunner(await web_server())
+        await app.setup()
+        bind_address = "0.0.0.0"
+        await web.TCPSite(app, bind_address, PORT).start()
+
         if dataBASE.MONGODB_URI:
             # ------------------------------------------------------------------------------------------------------- Loads Banned UsersId to List --------------------
             b_users, b_chats = await db.get_banned()
